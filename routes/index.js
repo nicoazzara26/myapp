@@ -7,7 +7,6 @@ router.get('/', function(req, res, next) {
   var subjects = google_drive_service.subjects()
 
   res.render('subjectsview', { title: 'UseTheDrive' , subjects: subjects});
-
 });
 
 

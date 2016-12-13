@@ -6,16 +6,13 @@ var google_drive_service = require('../services/google-drive-service');
 
 router.get('/:name', function(req, res) {
 
-var subjects = google_drive_service.subjects();
+  var subjects = google_drive_service.subjects();
 
-var obj = subjects.filter(function(obj){
-
-if(req.params.name == obj.name){
-
-  res.render('onesubjectview', obj)
-}
-
-})[0];
+  var obj = subjects.filter(function(obj){
+    if(req.params.name == obj.name){
+      res.render('onesubjectview', obj)
+    }
+  })[0];
 });
 
 module.exports = router;

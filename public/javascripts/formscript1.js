@@ -28,13 +28,12 @@ var pageform = new form();  //Se crea el objeto formulario de pagina
 var input = [];//creo un vector para cargar los inputs como variables Jquery por que sino no puedo usar .attr() .after() .focus()
 
 for (item in pageform.inputs){//Recorro la lista de inputs
-if (pageform.inputs[item].value == ""){//Evaluo si el campo esta vacio IMPORTANTE
-
-  input = $("."+pageform.inputs[item].className+"");// cargo las variables Jquery
-}
-if(input.length !=0){
-showerror(input);
-}
+  if (pageform.inputs[item].value == ""){//Evaluo si el campo esta vacio IMPORTANTE
+    input = $("."+pageform.inputs[item].className+"");// cargo las variables Jquery
+  }
+  if(input.length !=0){
+    showerror(input);
+  }
 }
 
 /*functions*/
