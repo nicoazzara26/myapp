@@ -1,15 +1,63 @@
+<!-- Header -->
+<div class="container">
+  <div class="full-header">
+    <div class="header-container">
+      <a href="#" class="logo" type="button">
+        <div class="cont-logo"></div>
+      </a>
+      <div>
+        <input type="text" class="search" placeholder="Buscar...">
+      </div>
+      <a href='#' class="newFolder"></a>
+      <div class="btn-container">
+        <button class="button btn-login" type="button" name="button">
+          Iniciar sesion
+        </button>
+        <button class="button btn-register" type="button" name="button">
+          Registrarse
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!--Main-->
+  <div class="folders">
+
 {{#each subjects}}
 <div class="select">
-<a class="linksubject" href="subject/{{name}}">
-<div class="img">
-<img src="/images/{{name}}{{type}}">
+  <a class="linksubject" href="subject/{{name}}">
+    <div class="img">
+      <img src="/images/{{name}}{{type}}">
+    </div>
+
+    <p class="text"> Materia: {{name}}
+      Profesor: {{teacher}}
+      <br>
+    </br>
+    Año: {{level}}</p>
+  </a>
+</div>
+{{/each}}
+
 </div>
 
- <p class="text"> Materia: {{name}}
-  Profesor: {{teacher}}
-  <br>
-  </br>
-  Año: {{level}}</p>
-  </a>
+<!--Modal-->
+<div class="m-background">
+</div>
+<div class="modal">
+  <div class="box-logo">
+    <img src="images/LOG-U.gif" alt="">
   </div>
-{{/each}}
+  <div class="box-title">
+    <h1>Agregar una nueva carpeta</h1>
+  </div>
+  <div class="box-content">
+    <form class="newfile form1"  method="post">
+      <input class="subject" type="text" name="subject" placeholder="Materia">
+      <input class="teacher"  type="text" name="teacher" placeholder="Profesor">
+      <input class="level" type="text" name="level" placeholder="Año">
+      <button class="button jsbutton" type="button">Crear</button>
+    </form>
+  </div>
+</div>
+</div>

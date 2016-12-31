@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET Login page. */
 router.get('/', function(req, res){
 
-  res.send('respond with a resource');
+  res.render('loginview', { title: 'UseTheDrive'});
 
 });
 

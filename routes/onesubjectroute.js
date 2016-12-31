@@ -10,7 +10,8 @@ router.get('/:name', function(req, res) {
 
   var obj = subjects.filter(function(obj){
     if(req.params.name == obj.name){
-      res.render('onesubjectview', obj)
+      res.render('onesubjectview', obj);
+
     }
   })[0];
 });

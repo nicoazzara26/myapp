@@ -6,7 +6,7 @@ var google_drive_service = require('../services/google-drive-service');
 router.get('/', function(req, res, next) {
   var subjects = google_drive_service.subjects()
 
-  res.render('index', { title: 'Bienvenido a Use the drive' , subjects: subjects});
+  res.render('subjectsview', { title: 'Bienvenido a Use the drive' , subjects: subjects});
 });
 
 
