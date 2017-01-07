@@ -23,6 +23,10 @@
   <!--Main-->
   <div class="folders">
 
+{{#each filess}}
+<p>{{name}}</p>
+{{/each}}
+
 {{#each subjects}}
 <div class="select">
   <a class="linksubject" href="subject/{{name}}">
