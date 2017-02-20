@@ -1,5 +1,5 @@
 
-<div class="img">
+<!-- <div class="img">
   <img src="/images/{{name}}{{type}}">
 </div>
 
@@ -12,4 +12,19 @@ Año: {{level}}</p>
   <div class="files">
 
   </div>
+</div> -->
+{{#each subjects}}
+<div class="select">
+  <a class="linksubject" href="subject/{{name}}">
+    <div class="img">
+      <img src="/images/{{name}}{{type}}">
+    </div>
+
+    <p class="text"> Materia: {{name}}
+      Profesor: {{teacher}}
+      <br>
+    </br>
+    Año: {{level}}</p>
+  </a>
 </div>
+{{/each}}

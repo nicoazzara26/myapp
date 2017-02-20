@@ -18,7 +18,7 @@ fs.readFile('client_secret.json', function processClientSecrets(err, content) {
   }
   // Authorize a client with the loaded credentials, then call the
   // Drive API.
-  authorize(JSON.parse(content), listFiles);
+  authorize(JSON.parse(content), listYear);
 
 });
 
@@ -102,9 +102,12 @@ function storeToken(token) {
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
 var filess = [];
-function listFiles(auth) {
+
+function listYear(auth) {
+
   var service = google.drive('v3');
   service.files.list({
+    q:"'0B8HrycSvPE4yRElsZ19hM0pqTmM' in parents",
     auth: auth,
     pageSize: 100,
     fields: "nextPageToken, files(id, name)"
@@ -126,7 +129,34 @@ function listFiles(auth) {
     }
   });
 }
+/*
+function listSubjects(auth) {
 
+  var service = google.drive('v3');
+  service.files.list({
+    q:"'' in parents",
+    auth: auth,
+    pageSize: 100,
+    fields: "nextPageToken, files(id, name)"
+  }, function(err, response) {
+    if (err) {
+      console.log('The API returned an error: ' + err);
+      return;
+    }
+    var files = response.files;
+    if (files.length == 0) {
+      //console.log('No files found.');
+    } else {
+      //console.log('Files:');
+      for (var i = 0; i < files.length; i++) {
+        filess[i] = files[i];
+        //console.log('%s (%s)', filess.name, filess.id);
+      }
+      return filess;
+    }
+  });
+}
+*/
 function greet(){
 return filess;
 }
